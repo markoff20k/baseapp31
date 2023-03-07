@@ -1,5 +1,6 @@
-import { ru } from './ru';
+import { en } from './en';
+import { pt } from './pt';
 
 export const customLanguageMap = {
-    ru,
+    en, pt
 };

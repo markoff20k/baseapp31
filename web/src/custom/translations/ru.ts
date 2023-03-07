@@ -3,7 +3,7 @@ import { LangType } from '../../translations';
 import { nationalitiesNames } from '../../translations/nationalities';
 
 export const ru: LangType = {
-    'page.header.navbar.signIn': 'Войти',
+    'page.header.navbar.signIn': 'Acessar plataforma',
     'page.header.navbar.quick.exchange': 'Quick exchange',
     'page.header.navbar.trade': 'Биржа',
     'page.header.navbar.wallets': 'Кошельки',
