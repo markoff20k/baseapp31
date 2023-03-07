@@ -26,6 +26,9 @@ const config = merge(commonConfig, {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 use: ['file-loader'],
             },
+
+            
+
             {
                 test: /\.(css|sass|scss|pcss)$/,
                 use: [
@@ -65,12 +68,14 @@ const config = merge(commonConfig, {
                 
                 exclude: /node_modules/,
             },
+            { test: /\.(js|jsx)?$/, use: ["babel-loader"], exclude: /node_modules/, },
         ],
     },
     devServer: {
         contentBase: path.join(__dirname, '../public'),
         compress: false,
         port: 3000,
+        disableHostCheck: true,
         historyApiFallback: true,
         stats: {
             children: false,

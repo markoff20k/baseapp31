@@ -1,27 +1,27 @@
-const hostUrl = window.location.hostname === 'www.fortem1.com.br' ? 'http://www.fortem1.com.br' : window.location.origin;
+const hostUrl = window.location.hostname === 'local.fortem1.com.br' ? 'http://local.fortem1.com.br' : window.location.origin;
 const protocolSSL = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
 const rangerHostUrl =  window.location.hostname === 'www.fortem1.com.br' ? 'ws://www.fortem1.com.br' : `${protocolSSL}${window.location.hostname}`;
 
 export const defaultConfig: Config = {
     api: {
-        authUrl: `https://www.fortem1.com.br/api/v2/barong`,
-        tradeUrl: `https://www.fortem1.com.br/api/v2/peatio`,
-        applogicUrl: `https://www.fortem1.com.br/api/v2/applogic`,
-        rangerUrl: `wss://www.fortem1.com.br}/api/v2/ranger`,
+        authUrl: `http://www.fortem1.com.br/api/v2/barong`,
+        tradeUrl: `http://www.fortem1.com.br/api/v2/peatio`,
+        applogicUrl: `http://www.fortem1.com.br/api/v2/applogic`,
+        rangerUrl: `ws://www.fortem1.com.br}/api/v2/ranger`,
         finexUrl: `${hostUrl}/api/v2/finex`,
         p2pUrl: `${hostUrl}/api/v2/p2p`,
     },
     finex: false,
-    withCredentials: false,
+    withCredentials: true,
     incrementalOrderBook: true,
-    isResizable: false,
-    isDraggable: false,
+    isResizable: true,
+    isDraggable: true,
     showLanding: true,
     sentryEnabled: false,
     captchaLogin: false,
-    usernameEnabled: false,
+    usernameEnabled: true,
     gaTrackerKey: '',
-    minutesUntilAutoLogout: '5',
+    minutesUntilAutoLogout: '15',
     msAlertDisplayTime: '5000',
     msPricesUpdates: '1000',
     sessionCheckInterval: '15000',
@@ -29,9 +29,9 @@ export const defaultConfig: Config = {
     passwordEntropyStep: '14',
     storage: {
         defaultStorageLimit: '50',
-        orderBookSideLimit: '25'
+        orderBookSideLimit: '50'
     },
-    languages: ['en', 'ru'],
+    languages: ['en', 'pt'],
     kycSteps: [
         'email',
         'phone',

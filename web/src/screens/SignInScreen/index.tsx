@@ -23,6 +23,11 @@ import {
     resetCaptchaState,
 } from '../../modules';
 
+
+
+import { SignIn } from './Login/index';
+
+
 export const SignInScreen: React.FC = () => {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -163,8 +168,9 @@ export const SignInScreen: React.FC = () => {
     const renderCaptcha = React.useMemo(() => <Captcha error={errorSignIn || emailError} />, [errorSignIn, emailError]);
 
     return (
-        <div className="pg-sign-in-screen">
-            <div className={cx('pg-sign-in-screen__container', { loading })}>
+        // <div className="pg-sign-in-screen">
+        //     <div className={cx('pg-sign-in-screen__container', { loading })}>
+        <>
                 {require2FA ? (
                     <TwoFactorAuth
                         isMobile={isMobileDevice}
@@ -178,39 +184,41 @@ export const SignInScreen: React.FC = () => {
                         handleClose2fa={handleClose}
                     />
                 ) : (
-                    <SignInComponent
-                        email={email}
-                        emailError={emailError}
-                        emailFocused={emailFocused}
-                        emailPlaceholder={formatMessage({ id: 'page.header.signIn.email' })}
-                        password={password}
-                        passwordError={passwordError}
-                        passwordFocused={passwordFocused}
-                        passwordPlaceholder={formatMessage({ id: 'page.header.signIn.password' })}
-                        labelSignIn={formatMessage({ id: 'page.header.signIn' })}
-                        labelSignUp={formatMessage({ id: 'page.header.signUp' })}
-                        emailLabel={formatMessage({ id: 'page.header.signIn.email' })}
-                        passwordLabel={formatMessage({ id: 'page.header.signIn.password' })}
-                        receiveConfirmationLabel={formatMessage({
-                            id: 'page.header.signIn.receiveConfirmation',
-                        })}
-                        forgotPasswordLabel={formatMessage({ id: 'page.header.signIn.forgotPassword' })}
-                        isLoading={loading}
-                        onForgotPassword={forgotPassword}
-                        onSignUp={handleSignUp}
-                        onSignIn={handleSignIn}
-                        handleChangeFocusField={handleFieldFocus}
-                        isFormValid={validateForm}
-                        refreshError={refreshError}
-                        changeEmail={handleChangeEmailValue}
-                        changePassword={handleChangePasswordValue}
-                        renderCaptcha={renderCaptcha}
-                        reCaptchaSuccess={reCaptchaSuccess}
-                        geetestCaptchaSuccess={geetestCaptchaSuccess}
-                        captcha_response={captcha_response}
-                    />
+                    <SignIn />
+                    // <SignInComponent
+                    //     email={email}
+                    //     emailError={emailError}
+                    //     emailFocused={emailFocused}
+                    //     emailPlaceholder={formatMessage({ id: 'page.header.signIn.email' })}
+                    //     password={password}
+                    //     passwordError={passwordError}
+                    //     passwordFocused={passwordFocused}
+                    //     passwordPlaceholder={formatMessage({ id: 'page.header.signIn.password' })}
+                    //     labelSignIn={formatMessage({ id: 'page.header.signIn' })}
+                    //     labelSignUp={formatMessage({ id: 'page.header.signUp' })}
+                    //     emailLabel={formatMessage({ id: 'page.header.signIn.email' })}
+                    //     passwordLabel={formatMessage({ id: 'page.header.signIn.password' })}
+                    //     receiveConfirmationLabel={formatMessage({
+                    //         id: 'page.header.signIn.receiveConfirmation',
+                    //     })}
+                    //     forgotPasswordLabel={formatMessage({ id: 'page.header.signIn.forgotPassword' })}
+                    //     isLoading={loading}
+                    //     onForgotPassword={forgotPassword}
+                    //     onSignUp={handleSignUp}
+                    //     onSignIn={handleSignIn}
+                    //     handleChangeFocusField={handleFieldFocus}
+                    //     isFormValid={validateForm}
+                    //     refreshError={refreshError}
+                    //     changeEmail={handleChangeEmailValue}
+                    //     changePassword={handleChangePasswordValue}
+                    //     renderCaptcha={renderCaptcha}
+                    //     reCaptchaSuccess={reCaptchaSuccess}
+                    //     geetestCaptchaSuccess={geetestCaptchaSuccess}
+                    //     captcha_response={captcha_response}
+                    // />
+                    
                 )}
-            </div>
-        </div>
+        </>
+        // </div>
     );
 };

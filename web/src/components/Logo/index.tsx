@@ -6,8 +6,8 @@ import { CustomizationSettingsInterface, LogoInterface } from '../../themes';
 
 
 const DEFAULT_IMAGE: LogoInterface = {
-    url: '',
-    width: '',
+    url: 'https://www.fortem1.com.br/static/media/logo_branca_bandeira_verde.66a211dc.svg',
+    width: '280',
 };
 
 export const Logo: FC = (): ReactElement => {
