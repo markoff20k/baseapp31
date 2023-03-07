@@ -18,7 +18,7 @@ ENV REACT_APP_SENTRY_ORGANIZATION=${REACT_APP_SENTRY_ORGANIZATION}
 ENV REACT_APP_SENTRY_PROJECT=${REACT_APP_SENTRY_PROJECT}
 
 RUN yarn install
-RUN ./scripts/build.sh
+RUN chmod -R 777 ./scripts/build.sh
 
 FROM nginx:mainline-alpine
 
