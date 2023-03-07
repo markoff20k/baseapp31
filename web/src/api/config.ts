@@ -1,13 +1,13 @@
-const hostUrl = window.location.hostname === 'local.fortem1.com.br' ? 'http://local.fortem1.com.br' : window.location.origin;
+const hostUrl = window.location.hostname === 'www.fortem1.com.br' ? 'https://www.fortem1.com.br' : window.location.origin;
 const protocolSSL = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-const rangerHostUrl =  window.location.hostname === 'www.fortem1.com.br' ? 'ws://www.fortem1.com.br' : `${protocolSSL}${window.location.hostname}`;
+const rangerHostUrl =  window.location.hostname === 'www.fortem1.com.br' ? 'wss://www.fortem1.com.br' : `${protocolSSL}${window.location.hostname}`;
 
 export const defaultConfig: Config = {
     api: {
-        authUrl: `http://www.fortem1.com.br/api/v2/barong`,
-        tradeUrl: `http://www.fortem1.com.br/api/v2/peatio`,
-        applogicUrl: `http://www.fortem1.com.br/api/v2/applogic`,
-        rangerUrl: `ws://www.fortem1.com.br}/api/v2/ranger`,
+        authUrl: `https://www.fortem1.com.br/api/v2/barong`,
+        tradeUrl: `https://www.fortem1.com.br/api/v2/peatio`,
+        applogicUrl: `https://www.fortem1.com.br/api/v2/applogic`,
+        rangerUrl: `wss://www.fortem1.com.br}/api/v2/ranger`,
         finexUrl: `${hostUrl}/api/v2/finex`,
         p2pUrl: `${hostUrl}/api/v2/p2p`,
     },
