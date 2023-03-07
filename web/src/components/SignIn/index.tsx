@@ -10,6 +10,18 @@ import { EMAIL_REGEX } from '../../helpers';
 import { GeetestCaptchaResponse } from '../../modules';
 import { selectMobileDeviceState } from '../../modules/public/globalSettings';
 
+import TextField from "@mui/material/TextField";
+
+
+import { Container, Content, Login, Header, Input, Buttons } from "./style";
+import { Checkbox } from "@mui/material";
+
+ 
+import logo from '../../assets/images/logo-icon-dark.svg';
+
+
+
+
 export interface SignInProps {
     labelSignIn?: string;
     labelSignUp?: string;
@@ -169,6 +181,101 @@ const SignIn: React.FC<SignInProps> = ({
     );
 
     return (
+
+
+        <Container>
+        <Content>
+             <Login>
+               <Header>
+                 <img src={logo} alt="Logo" />
+                 <p>
+                   Faça o login com o email utilizado
+                   <br />
+                   no cadastro
+                 </p>
+               </Header>
+               <Input>
+                 {/* <TextField
+                   className="input-login"
+                   // size="small"
+                   id="outlined-basic"
+                   label="Email"
+                   variant="outlined"
+                 />
+                 <TextField
+                   className="input-login"
+                   // size="small"
+                   id="outlined-basic"
+                   label="Senha"
+                   variant="outlined"
+                 /> */}
+                <CustomInput
+                            type="email"
+                            label={emailLabel || 'Email'}
+                            placeholder={emailPlaceholder}
+                            defaultLabel="Email"
+                            handleChangeInput={handleChangeEmail}
+                            inputValue={email}
+                            handleFocusInput={() => handleFieldFocus('email')}
+                            classNameLabel="cr-sign-in-form__label"
+                            autoFocus={!isMobileDevice}
+                 />                 
+                <CustomInput
+                            
+                            type="password"
+                            label={passwordLabel || 'Password'}
+                            placeholder={passwordPlaceholder}
+                            defaultLabel="Password"
+                            handleChangeInput={handleChangePassword}
+                            inputValue={password}
+                            handleFocusInput={() => handleFieldFocus('password')}
+                            classNameLabel="cr-sign-in-form__label"
+                            autoFocus={false}
+                 />
+                 <div className="checkbox">
+                   <Checkbox className="checkbox-btn" />
+                   <p>Lembrar meus dados de login</p>
+                 </div>
+               </Input>
+               <Buttons>
+                 <div className="access-account">
+                        <Button
+                            block={true}
+                            type="button"
+                            disabled={isLoading || !email.match(EMAIL_REGEX) || !password || isButtonDisabled}
+                            onClick={handleClick as any}
+                            size="lg"
+                            variant="primary">
+                            {isLoading ? 'Loading...' : labelSignIn ? labelSignIn : 'Sign in'}
+                        </Button>
+                   
+                   <button
+                     
+                   >
+                     Esqueci minha senha
+                   </button>
+                 </div>
+                 <div className="create-account">
+                   <p>Não possui cadastro?</p>
+                   <button
+                     onClick={() => {
+                    //    props.setIsRegister(true);
+                    //    props.setIsRecover(false);
+                     }}
+                   >
+                     Criar conta
+                   </button>
+                 </div>
+               </Buttons>
+             </Login>
+           </Content>
+       </Container>
+
+
+
+
+        {/*
+
         <form>
             <div className="cr-sign-in-form" onKeyPress={handleEnterPress}>
                 {!isMobileDevice && (
@@ -245,6 +352,8 @@ const SignIn: React.FC<SignInProps> = ({
                 </div>
             </div>
         </form>
+    
+                    */}
     );
 };
 

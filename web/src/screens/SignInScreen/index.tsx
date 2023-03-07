@@ -184,38 +184,38 @@ export const SignInScreen: React.FC = () => {
                         handleClose2fa={handleClose}
                     />
                 ) : (
-                    <SignIn />
-                    // <SignInComponent
-                    //     email={email}
-                    //     emailError={emailError}
-                    //     emailFocused={emailFocused}
-                    //     emailPlaceholder={formatMessage({ id: 'page.header.signIn.email' })}
-                    //     password={password}
-                    //     passwordError={passwordError}
-                    //     passwordFocused={passwordFocused}
-                    //     passwordPlaceholder={formatMessage({ id: 'page.header.signIn.password' })}
-                    //     labelSignIn={formatMessage({ id: 'page.header.signIn' })}
-                    //     labelSignUp={formatMessage({ id: 'page.header.signUp' })}
-                    //     emailLabel={formatMessage({ id: 'page.header.signIn.email' })}
-                    //     passwordLabel={formatMessage({ id: 'page.header.signIn.password' })}
-                    //     receiveConfirmationLabel={formatMessage({
-                    //         id: 'page.header.signIn.receiveConfirmation',
-                    //     })}
-                    //     forgotPasswordLabel={formatMessage({ id: 'page.header.signIn.forgotPassword' })}
-                    //     isLoading={loading}
-                    //     onForgotPassword={forgotPassword}
-                    //     onSignUp={handleSignUp}
-                    //     onSignIn={handleSignIn}
-                    //     handleChangeFocusField={handleFieldFocus}
-                    //     isFormValid={validateForm}
-                    //     refreshError={refreshError}
-                    //     changeEmail={handleChangeEmailValue}
-                    //     changePassword={handleChangePasswordValue}
-                    //     renderCaptcha={renderCaptcha}
-                    //     reCaptchaSuccess={reCaptchaSuccess}
-                    //     geetestCaptchaSuccess={geetestCaptchaSuccess}
-                    //     captcha_response={captcha_response}
-                    // />
+                    // <SignIn />
+                    <SignInComponent
+                        email={email}
+                        emailError={emailError}
+                        emailFocused={emailFocused}
+                        emailPlaceholder={formatMessage({ id: 'page.header.signIn.email' })}
+                        password={password}
+                        passwordError={passwordError}
+                        passwordFocused={passwordFocused}
+                        passwordPlaceholder={formatMessage({ id: 'page.header.signIn.password' })}
+                        labelSignIn={formatMessage({ id: 'page.header.signIn' })}
+                        labelSignUp={formatMessage({ id: 'page.header.signUp' })}
+                        emailLabel={formatMessage({ id: 'page.header.signIn.email' })}
+                        passwordLabel={formatMessage({ id: 'page.header.signIn.password' })}
+                        receiveConfirmationLabel={formatMessage({
+                            id: 'page.header.signIn.receiveConfirmation',
+                        })}
+                        forgotPasswordLabel={formatMessage({ id: 'page.header.signIn.forgotPassword' })}
+                        isLoading={loading}
+                        onForgotPassword={forgotPassword}
+                        onSignUp={handleSignUp}
+                        onSignIn={handleSignIn}
+                        handleChangeFocusField={handleFieldFocus}
+                        isFormValid={validateForm}
+                        refreshError={refreshError}
+                        changeEmail={handleChangeEmailValue}
+                        changePassword={handleChangePasswordValue}
+                        renderCaptcha={renderCaptcha}
+                        reCaptchaSuccess={reCaptchaSuccess}
+                        geetestCaptchaSuccess={geetestCaptchaSuccess}
+                        captcha_response={captcha_response}
+                    />
                     
                 )}
         </>

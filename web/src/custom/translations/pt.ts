@@ -64,5 +64,17 @@ export const pt = {
 
 	'page.header.signUp': 'Criar conta',
 
+	'page.header.signIn': 'Acessar plataforma',
+	'page.header.signIn.email': 'Email',
+	'page.header.signIn.password': 'Senha',
+	'page.header.signIn.password.message.error': 'Senha inválida',
+	'page.header.signIn.receiveConfirmation': `Didn't receive your confirmation email?`,
+	'page.header.signIn.forgotPassword': 'Esqueceu sua senha?',
+	'page.header.signIn.resetPassword.title': 'Alterar senha',
+	'page.header.signIn.resetPassword.newPassword': 'Nova senha',
+	'page.header.signIn.resetPassword.repeatPassword': 'Repita a nova senha',
+	'page.header.signIn.resetPassword.button': 'Alterar',
+	'page.header.signIn.resetPassword.error': 'Dados incompletos ou inválidos',
+
 	
 };
