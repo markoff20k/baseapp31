@@ -52,20 +52,7 @@ const config = merge(commonConfig, {
         rules: [
             {
                 test: /\.(css|sass|scss|pcss)$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: true,
-                            reloadAll: true,
-                        },
-                    },
-                    'cache-loader',
-                    'css-loader',
-                    'sass-loader',
-                    'postcss-loader',
-                ],
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader'],
             },
             {
                 test: /\.(tsx|ts)?$/,
@@ -95,8 +82,6 @@ const config = merge(commonConfig, {
                     },
                 }]
             },
-
-            { test: /\.(js|jsx)?$/, use: ["babel-loader"], exclude: /node_modules/, },
         ],
     },
     stats: {

@@ -80,20 +80,27 @@
         "ws": "^7.2.0"
     },
     "scripts": {
-        "lint": "eslint --ext .ts,.tsx src",
-        "lint:fix": "eslint --ext .ts,.tsx src --fix",
-        "style:lint": "npx stylelint '**/*.pcss'",
-        "mockAPI": "node mocks/mockAPI.js",
-        "mockWS": "node mocks/mockWS.js",
-        "start": "cross-env NODE_OPTIONS=--max_old_space_size=2048 webpack-dev-server --config ./webpack/development.ts",
-        "start-mock": "npm-run-all -p start mockAPI mockWS",
-        "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=4096 webpack --config ./webpack/development.ts",
-        "analyze": "cross-env ANALYZE=1 NODE_ENV=production NODE_OPTIONS=--max_old_space_size=4096 webpack --config ./webpack/production.ts  --profile --json > stats.json",
-        "test": "jest --config jest.config.js --silent",
-        "test:coverage": "jest --config jest.config.js --collectCoverage=true",
-        "test:ci": "jest --config jest.config.js --silent --ci",
-        "spec:integration": "cypress open",
-        "clean": "rimraf build"
+		"build:css": "postcss src/index.pcss -o src/index.css",
+		"watch:css": "postcss src/index.pcss -o src/index.css -w",
+		"lint": "yarn style:lint && tsc --noEmit && tslint --project .",
+		"lint:fix": "tslint --project . --fix",
+		"style:lint": "npx stylelint \"**/*.pcss\" --fix",
+		"mockAPI": "node mocks/mockAPI.js",
+		"mockWS": "node mocks/mockWS.js",
+		"start": "npm-run-all -p watch:css start-js",
+		"start-mock": "npm-run-all -p watch:css start-js mockAPI mockWS",
+		"start-js": "react-scripts start",
+		"build-js": "react-app-rewired build --scripts-version react-scripts build",
+		"build": "npm-run-all build:css build-js clean:mapfiles",
+		"clean:mapfiles": "find build -name '*.map' -exec rm {} ';'",
+		"test": "react-scripts test",
+		"test:coverage": "react-scripts test --collectCoverage=true",
+		"test:ci": "react-scripts test --ci",
+		"spec:integration": "cypress open",
+		"eject": "react-scripts eject",
+		"clean": "rimraf build",
+		"analyze": "source-map-explorer build/static/js/main.*"
+        
     },
     "optionalDependencies": {
         "typescript": "4.2.4"
