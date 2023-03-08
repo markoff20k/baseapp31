@@ -9,7 +9,6 @@ import { Provider } from 'react-redux';
 import { sentryEnabled } from './api/config';
 import { App } from './App';
 import './index.pcss';
-
 import { rootSaga } from './modules';
 import { sagaMiddleware, store } from './store';
 
