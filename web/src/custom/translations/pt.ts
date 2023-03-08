@@ -77,7 +77,12 @@ export const pt = {
 	'page.header.signIn.resetPassword.error': 'Dados incompletos ou inválidos',
 
 	'page.password2fa.message': 'Digite os números gerados para ativar a autenticação',
-	'page.body.profile.whitelisted.paste': 'Colar'
+	'page.body.profile.whitelisted.paste': 'Colar',
+
+	'page.body.landing.header.button2': 'Acessar plataforma',
+	'page.body.landing.header.button3': 'Criar conta',
+
+	
 
 	
 };
