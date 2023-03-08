@@ -156,7 +156,7 @@ export const App = () => {
     return (
         <IntlProvider locale={lang} messages={getTranslations(lang, isMobileDevice)} key={lang}>
             <ThemeProvider theme={myTheme}>
-            <GlobalStyle />
+                <GlobalStyle />
             <Router history={browserHistory}>
                 <ErrorWrapper>
                     <React.Suspense fallback={null}>
