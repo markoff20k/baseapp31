@@ -80,6 +80,11 @@ export const en = {
     'page.header.signIn.resetPassword.button': 'Change',
     'page.header.signIn.resetPassword.error': 'Fields are empty or don`t matches',
 
+    'page.password2fa.message': 'Insert your token',
+
+    'page.body.profile.whitelisted.paste': 'Paste'
+    
+
 
 
 };

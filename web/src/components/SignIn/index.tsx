@@ -10,7 +10,9 @@ import { EMAIL_REGEX } from '../../helpers';
 import { GeetestCaptchaResponse } from '../../modules';
 import { selectMobileDeviceState } from '../../modules/public/globalSettings';
 
-import TextField from "@mui/material/TextField";
+// import TextField from "@mui/material/TextField";
+
+import { FormInput } from '..';
 
 
 import { Container, Content, Login, Header, Input, Buttons } from "./style";
@@ -209,33 +211,46 @@ const SignIn: React.FC<SignInProps> = ({
                    label="Senha"
                    variant="outlined"
                  /> */}
-                <CustomInput
-                            type="email"
-                            label={emailLabel || 'Email'}
-                            placeholder={emailPlaceholder}
-                            defaultLabel="Email"
-                            handleChangeInput={handleChangeEmail}
-                            inputValue={email}
-                            handleFocusInput={() => handleFieldFocus('email')}
-                            classNameLabel="cr-sign-in-form__label"
-                            autoFocus={!isMobileDevice}
-                 />                 
-                <CustomInput
-                            
-                            type="password"
-                            label={passwordLabel || 'Password'}
-                            placeholder={passwordPlaceholder}
-                            defaultLabel="Password"
-                            handleChangeInput={handleChangePassword}
-                            inputValue={password}
-                            handleFocusInput={() => handleFieldFocus('password')}
-                            classNameLabel="cr-sign-in-form__label"
-                            autoFocus={false}
-                 />
-                 <div className="checkbox">
+                 
+                 <div className="cr-sign-in-form__header">
+                        
+                 </div>
+						<FormInput
+							
+							classNameInput="input-login"
+							type="input-group"
+							label={emailLabel || 'Email'}
+							placeholder={emailPlaceholder}
+							defaultLabel="Email"
+							handleChangeInput={handleChangeEmail}
+							inputValue={email}
+							handleFocusInput={() => handleFieldFocus('email')}
+							classNameLabel="cr-sign-in-form__label"
+							autoFocus={true}
+						/>  
+
+                        {emailError && <div className={'cr-sign-in-form__error'}>{emailError}</div>}
+
+                        <FormInput
+							classNameInput="input-login"
+							type="password"
+							label={passwordLabel || 'Senha'}
+							placeholder={passwordPlaceholder}
+							defaultLabel="Senha"
+							handleChangeInput={handleChangePassword}
+							inputValue={password}
+							handleFocusInput={() => handleFieldFocus('password')}
+							classNameLabel="cr-sign-in-form__label"
+							autoFocus={false}
+						/>
+						
+                        {passwordError && <div className={'cr-sign-in-form__error'}>{passwordError}</div>}
+
+                 
+                 {/* <div className="checkbox">
                    <Checkbox className="checkbox-btn" />
                    <p>Lembrar meus dados de login</p>
-                 </div>
+                 </div> */}
                </Input>
                <Buttons>
                  <div className="access-account">

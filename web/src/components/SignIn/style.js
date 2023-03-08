@@ -7,9 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url(${background});
-  background-repeat: no-repeat;
-  background-size: cover;
+
 `;
 
 export const Content = styled.div`
@@ -50,7 +48,7 @@ export const Header = styled.div`
   }
 
   img {
-    width: 30px;
+    width: 40px;
     margin-bottom: 20px;
 
     @media screen and (max-width: 1440px) {
@@ -60,7 +58,7 @@ export const Header = styled.div`
   }
 
   p {
-    color: #fff;
+    color: #f5f5f5;
     font-size: 20px;
 
     @media screen and (max-width: 1440px) {
@@ -76,23 +74,7 @@ export const Input = styled.div`
   align-items: center;
   padding: 5px 10px;
 
-  .input-login {
-    width: 90%;
-    color: #fff;
-    background-color: #1D242D;
-    border-radius: 12px;
-    margin: 15px 0;
-    outline: none;
 
-    @media screen and (max-width: 1440px) {
-      width: 90%;
-      color: #fff;
-      background-color: #1D242D;
-      border-radius: 12px;
-      margin: 10px 0;
-      outline: none;
-    }
-  }
 
   .checkbox {
     width: 95%;
@@ -137,6 +119,7 @@ export const Buttons = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-top: 40px;
 
     button {
       width: 90%;
@@ -166,10 +149,11 @@ export const Buttons = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-top: 40px;
 
     p {
       color: ${(props) => props.theme.white};
-      font-size: 18px;
+      font-size: 16px;
 
       @media screen and (max-width: 1440px) {
         font-size: 14px;

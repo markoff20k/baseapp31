@@ -40,6 +40,8 @@ import {
     WalletDeposit,
     WalletsMobileScreen,
     WalletWithdraw,
+
+    
 } from '../../mobile/screens';
 import {
     logoutFetch,
@@ -85,6 +87,7 @@ import {
     P2PUserOffersScreen,
     CreateP2POfferScreen,
     P2POrderScreen,
+    LogInScreen,
 } from '../../screens';
 
 interface ReduxProps {
@@ -333,6 +336,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/setup" component={SetupScreen} />
                     <Route exact={true} path="/magic-link" component={MagicLink} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/signin" component={SignInScreen} />
+                    {/* <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/signin" component={LogInScreen} /> */}
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/confirmation" component={VerificationScreen} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/signup" component={SignUpScreen} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/forgot_password" component={ForgotPasswordScreen} />

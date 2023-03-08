@@ -7,9 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url(${background});
-  background-repeat: no-repeat;
-  background-size: cover;
+
 `;
 
 export const Content = styled.div`
@@ -76,23 +74,7 @@ export const Input = styled.div`
   align-items: center;
   padding: 5px 10px;
 
-  .input-login {
-    width: 90%;
-    color: #fff;
-    background-color: #272c35;
-    border-radius: 15px;
-    margin: 15px 0;
-    outline: none;
 
-    @media screen and (max-width: 1440px) {
-      width: 90%;
-      color: #fff;
-      background-color: #272c35;
-      border-radius: 15px;
-      margin: 10px 0;
-      outline: none;
-    }
-  }
 
   .checkbox {
     width: 95%;

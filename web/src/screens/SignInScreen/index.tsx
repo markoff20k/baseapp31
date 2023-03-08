@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { captchaType, captchaLogin } from '../../api';
-import { Captcha, SignInComponent, TwoFactorAuth } from '../../components';
+import { Captcha, SignInComponent, TwoFactorAuth, Login } from '../../components';
 import { EMAIL_REGEX, ERROR_EMPTY_PASSWORD, ERROR_INVALID_EMAIL, setDocumentTitle } from '../../helpers';
 import { useReduxSelector } from '../../hooks';
 import {
@@ -168,9 +168,9 @@ export const SignInScreen: React.FC = () => {
     const renderCaptcha = React.useMemo(() => <Captcha error={errorSignIn || emailError} />, [errorSignIn, emailError]);
 
     return (
-        // <div className="pg-sign-in-screen">
-        //     <div className={cx('pg-sign-in-screen__container', { loading })}>
-        <>
+        <div className="pg-sign-in-screen">
+            <div className={cx('pg-sign-in-screen__container', { loading })}>
+        
                 {require2FA ? (
                     <TwoFactorAuth
                         isMobile={isMobileDevice}
@@ -218,7 +218,7 @@ export const SignInScreen: React.FC = () => {
                     />
                     
                 )}
-        </>
-        // </div>
+        </div>
+    </div>
     );
 };

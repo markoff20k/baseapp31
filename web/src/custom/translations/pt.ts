@@ -76,5 +76,8 @@ export const pt = {
 	'page.header.signIn.resetPassword.button': 'Alterar',
 	'page.header.signIn.resetPassword.error': 'Dados incompletos ou inválidos',
 
+	'page.password2fa.message': 'Digite os números gerados para ativar a autenticação',
+	'page.body.profile.whitelisted.paste': 'Colar'
+
 	
 };

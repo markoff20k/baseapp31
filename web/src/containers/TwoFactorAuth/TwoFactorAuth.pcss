@@ -1,10 +1,12 @@
 .pg-sign-in-screen {
-  background: url(assets/images/background-signin.svg);
+  background: url(assets/images/background-signin.png);
   background-size: cover;
+  background-repeat: no-repeat;
+
   display: flex;
   height: calc(100vh - calc(var(--gap) * 9.84));
   justify-content: center;
-  margin: 0 auto;
+  
 
   .pg-sign-in-screen__container {
     background: transparent;
@@ -13,24 +15,31 @@
   }
 
   .pg-2fa___form {
+    margin-top: calc(var(--gap) * 4.33) !important;
+    border-radius: 12px;
+  
     .cr-email-form {
       background: var(--body-background-color);
       max-width: 504px;
       min-height: unset;
+      margin-top: calc(var(--gap) * 4.33) !important;
+      border-radius: 12px;
+      
 
       &__option {
-        background: var(--subheader-background-color);
+        background: transparent;
+        border-top-radius: 12px;
       }
 
       &__options-group {
-        border-bottom: 2px solid var(--divider-color-level-2);
+        /* border-bottom: 2px solid var(--divider-color-level-2); */
         color: var(--primary-text-color);
         height: calc(var(--big-gap) * 0.97);
         width: 100%;
       }
 
       &__label {
-        margin-top: -9px;
+        
       }
 
       &__input {
@@ -57,10 +66,23 @@
         cursor: pointer;
         display: inline-block;
         height: calc(var(--gap) * 2.5);
-        margin-top: calc(var(--gap) * 0.5);
+        margin-top: -20px;
         position: absolute;
         right: calc(var(--gap) * 3.3);
         width: calc(var(--gap) * 2.5);
+      }
+
+      &__mini-logo {
+        
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+
+        
+        
+        
+        
       }
 
       &__group--focused {
@@ -70,6 +92,7 @@
 
         input {
           border-color: var(--input-border-color-active) !important;
+          
         }
       }
 

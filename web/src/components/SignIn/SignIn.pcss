@@ -1,9 +1,7 @@
 .cr-sign-in-form {
-  border-radius: 3px;
-  box-shadow: 0 10px 15px var(--shadow-color-level-2);
-  height: 500px;
-  max-width: 424px;
-  position: relative;
+  
+  
+  
 
   &__options-group {
     border-bottom: 2px solid var(--divider-color-level-2);
@@ -38,19 +36,16 @@
     width: 75%;
   }
 
-  &__form-content {
-    box-sizing: border-box;
-    padding: var(--email-form-padding) var(--email-form-padding) 12px;
-  }
 
-  .custom-input {
+  .input-login {
     input {
-      border: 2px solid var(--input-border-color);
+      border: 2px solid var(--input-border-color) !important;
       border-radius: 12px !important;
+      background-color: rgba(255,255,255,0.03) !important;
     }
 
     label {
-      font-size: 10px;
+      font-size: 10px !important;
       font-weight: bold;
       margin: 0;
       position: static;
@@ -69,6 +64,11 @@
 
   & > * {
     background: transparent;
+  }
+
+  &__label {
+    
+
   }
 
   &__error-message {
@@ -108,8 +108,8 @@
   }
 
   &__title {
-    font-size: 18px;
-    margin: calc(var(--gap) * 3) 0 calc(var(--gap) * 8) 0;
+    font-size: 20px;
+    margin: calc(var(--gap) * 0.5) 0 calc(var(--gap) * 8) 0;
     text-align: center;
   }
 

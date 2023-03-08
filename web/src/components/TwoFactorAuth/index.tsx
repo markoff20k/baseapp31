@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import { CodeVerification } from '../';
 import { CloseIcon } from '../../assets/images/CloseIcon';
 
+import { MiniLogo } from '../../assets/images/MiniLogo';
+
 export interface TwoFactorAuthProps {
     isMobile?: boolean;
     isLoading?: boolean;
@@ -42,12 +44,14 @@ export const TwoFactorAuthComponent: React.FC<TwoFactorAuthProps> = ({
                 <div className="cr-email-form">
                     <div className="cr-email-form__options-group">
                         <div className="cr-email-form__option">
-                            <div className="cr-email-form__option-inner">
-                                {title || '2FA verification'}
+                                <div className="cr-email-form__mini-logo">
+                                {/* {title || '2FA verification'} */}
+                                    <MiniLogo />
+                                </div>
                                 <div className="cr-email-form__cros-icon" onClick={handleClose2fa}>
                                     <CloseIcon className="close-icon" />
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div className="cr-email-form__form-content">
