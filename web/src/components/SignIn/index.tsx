@@ -211,10 +211,6 @@ const SignIn: React.FC<SignInProps> = ({
                    label="Senha"
                    variant="outlined"
                  /> */}
-                 
-                 <div className="cr-sign-in-form__header">
-                        
-                 </div>
 						<FormInput
 							
 							classNameInput="input-login"
@@ -246,11 +242,11 @@ const SignIn: React.FC<SignInProps> = ({
 						
                         {passwordError && <div className={'cr-sign-in-form__error'}>{passwordError}</div>}
 
-                 
-                 {/* <div className="checkbox">
+
+                 <div className="checkbox">
                    <Checkbox className="checkbox-btn" />
                    <p>Lembrar meus dados de login</p>
-                 </div> */}
+                 </div>
                </Input>
                <Buttons>
                  <div className="access-account">
