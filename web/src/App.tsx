@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-
 import { createBrowserHistory } from 'history';
-
+import * as React from 'react';
 import * as ReactGA from 'react-ga';
 import { IntlProvider } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,12 +12,6 @@ import { configsFetch, selectCurrentLanguage, selectMobileDeviceState } from './
 import { languageMap } from './translations';
 import { SharedLayout } from './components';
 import WebSocketProvider from './websocket/WebSocket';
-
-import { theme } from "./styles/Theme";
-import { GlobalStyle } from "./styles/GlobalStyle";
-
-import { ThemeProvider } from "styled-components";
-
 
 const gaKey = gaTrackerKey();
 const browserHistory = createBrowserHistory();
@@ -113,36 +105,11 @@ const RenderDeviceContainers = () => {
 export const App = () => {
     const dispatch = useDispatch();
 
-    const [themeDark, setThemeDark] = useState(true);
-    const [myTheme, setMyTheme] = useState(theme.dark);
-    const [isOpened, setIsOpened] = useState(true);
-    const [user, setUser] = useState(
-      // {
-      //   avatar: avatar,
-      //   name: 'Rodrigo Fontoura',
-      //   account: '1D8BA1F70B30',
-      // }
-    );
-
-
-    function hendleTheme() {
-        setThemeDark(!themeDark);
-      }
-    
-      useEffect(() => {
-        if (!themeDark) {
-          setMyTheme(theme.light);
-        } else {
-          setMyTheme(theme.dark);
-        }
-        console.log();
-      }, [themeDark]);
-
     React.useEffect(() => {
         dispatch(configsFetch());
 
         const rootElement = document.documentElement;
-        const fontFamily = window.env?.fontFamily ? window.env?.fontFamily : `'Inter', sans-serif`;
+        const fontFamily = window.env?.fontFamily ? window.env?.fontFamily : `'IBM Plex Sans', sans-serif`;
 
         if (rootElement) {
             rootElement.style.setProperty('--font-family', fontFamily);
@@ -155,8 +122,6 @@ export const App = () => {
 
     return (
         <IntlProvider locale={lang} messages={getTranslations(lang, isMobileDevice)} key={lang}>
-            <ThemeProvider theme={myTheme}>
-                <GlobalStyle />
             <Router history={browserHistory}>
                 <ErrorWrapper>
                     <React.Suspense fallback={null}>
@@ -166,7 +131,6 @@ export const App = () => {
                     </React.Suspense>
                 </ErrorWrapper>
             </Router>
-            </ThemeProvider>
         </IntlProvider>
     );
 };
